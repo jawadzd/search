@@ -1,0 +1,12 @@
+<div class="search-container">
+  <input
+    type="text"
+    placeholder="Search articles..."
+    [(ngModel)]="searchTerm"
+  />
+
+  <div *ngFor="let article of filteredArticles">
+    <h3 [innerHTML]="article.title | highlight:searchTerm"></h3>
+    <p [innerHTML]="article.content | highlight:searchTerm"></p>
+  </div>
+</div>
